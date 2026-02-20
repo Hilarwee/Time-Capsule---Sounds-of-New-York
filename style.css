@@ -48,7 +48,6 @@ h1 {
 }
 
 .description {
-  margin-top: 60px;
   margin: 60px auto 0; 
   text-align: left;
   max-width: 1000px;
@@ -58,8 +57,7 @@ h1 {
 .p2{
 margin: 20px auto 0; 
   text-align: left;    
-  max-width: 1000px;  
-  line-height: 1.6;  
+  max-width: 1000px; 
 }
 
 .letter {
