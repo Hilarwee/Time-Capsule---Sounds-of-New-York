@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Sounds of New York</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <p class="p1"> 
+    19:02:2026 </p>
+
+	<h1 class="title">
+  <span class="line-one">
+    <span class="big">Sounds</span>
+    <span class="small">of</span>
+    <span class="line-two">New York</span>
+</h1>
+
+<p class="description"> 
+A time capsule of my first month in New York, captured in voice memos. It carries the city’s sound, both alive and sharp, foreign and overstimulating. To arrive in a new city is to be thrown into its pulse with all your senses overwhelmed. This capsule doesn’t show you the city, it lets you feel it, offering a look into how I've taken it all in. Maybe put some headphones in, close your eyes, and listen. </p>
+
+<h1 class="title-alt">
+  <button class="letter" data-audio="sound1.m4a">1</button>
+  <button class="letter" data-audio="sound2.m4a">2</button>
+  <button class="letter" data-audio="sound3.m4a">3</button>
+  <button class="letter" data-audio="sound4.m4a">4</button>
+  <button class="letter" data-audio="sound5.m4a">5</button>
+  <button class="letter" data-audio="sound6.m4a">6</button>
+  <button class="letter" data-audio="sound7.m4a">7</button> 
+  <button class="letter" data-audio="sound8.m4a">8</button>
+  <button class="letter" data-audio="sound9.m4a">9</button>
+  <button class="letter" data-audio="sound10.m4a">10</button>
+  </h1>
+
+<audio>
+	<source src="sound1.m4a" type="audio 1">
+  <source src="sound2.m4a" type="audio 2">
+  <source src="sound3.m4a" type="audio 3">
+  <source src="sound4.m4a" type="audio 4">
+  <source src="sound5.m4a" type="audio 5">
+  <source src="sound6.m4a" type="audio 6">
+  <source src="sound7.m4a" type="audio 7">
+  <source src="sound8.m4a" type="audio 8">
+  <source src="sound9.m4a" type="audio 9">
+  <source src="sound10.m4a" type="audio 10">
+    Your browser does not support the audio tag.
+</audio>
+
+<script>
+  const letters = document.querySelectorAll(".letter");
+
+  const audioMap = {};
+
+  letters.forEach(letter => {
+    letter.addEventListener("click", () => {
+      const audioSrc = letter.dataset.audio;
+
+      Object.keys(audioMap).forEach(key => {
+        if (key !== audioSrc) {
+          audioMap[key].pause();
+          audioMap[key].currentTime = 0;
+        }
+      });
+
+      if (!audioMap[audioSrc]) {
+        audioMap[audioSrc] = new Audio(audioSrc);
+      }
+
+      const audio = audioMap[audioSrc];
+
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+        audio.currentTime = 0;
+      }
+    });
+  });
+</script>
+
+
+<ol class="description">
+  <li>whoshing train from East Village to Park Slope, taken in the morning of Feb 11th for an excursion to Interference Archive.</li>
+  <li>clicks of the heater in my room after it's turned off.*</li>
+  <li>rumbles of the laundromat.</li>
+  <li>Lola serenading me in a bar.</li>
+  <li>the never ending blare of sirens.</li>
+  <li>all the elevators talk to you here.</li>
+  <li>a saturday night in East Village.</li>
+  <li>saxophone player on the Union Square subway platform.</li>
+  <li>heatpress beeping like crazy in the textile lab.</li>
+  <li>Bedford Av subway station on a Monday evening, on the way home from a runway show at the Gutter.</li>
+</ol>
+
+<p class=p2>*this sound is much more subtle than the rest, please don't forget to turn the volume back down if you turned it up. </p>
+
+</body>
